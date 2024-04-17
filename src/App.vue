@@ -36,7 +36,10 @@ const getData = async () => {
                 isViewing.value = true
                 console.log("正在查看体征")
                 signs.value = res.data['data'][0]
-                console.log(signs.value['time']);
+                signs.value['dbp'] = parseFloat(signs.value['dbp'].toFixed(2))
+                signs.value['sbp'] = parseFloat(signs.value['sbp'].toFixed(2))
+                signs.value['heart'] = parseFloat(signs.value['heart'].toFixed(2))
+                signs.value['respire'] = parseFloat(signs.value['respire'].toFixed(2))
             }
             else if (res.data['type'] === 1) {
                 type = 1
@@ -61,6 +64,10 @@ const getSign = async () => {
         isViewing.value = true
         console.log("正在查看体征")
         signs.value = res.data[0]
+        signs.value['dbp'] = parseFloat(signs.value['dbp'].toFixed(2))
+        signs.value['sbp'] = parseFloat(signs.value['sbp'].toFixed(2))
+        signs.value['heart'] = parseFloat(signs.value['heart'].toFixed(2))
+        signs.value['respire'] = parseFloat(signs.value['respire'].toFixed(2))
         console.log(signs.value['time']);
     }).finally(async function () {
         await delay(5);
