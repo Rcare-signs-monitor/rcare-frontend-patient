@@ -70,7 +70,7 @@ const getSign = async () => {
         signs.value['respire'] = parseFloat(signs.value['respire'].toFixed(2))
         console.log(signs.value['time']);
     }).finally(async function () {
-        await delay(5);
+        await delay(14);
         isViewing.value = false
     })
 }

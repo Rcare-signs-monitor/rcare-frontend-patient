@@ -2,18 +2,18 @@
 const props = defineProps(['isViewing', 'signs'])
 
 import { ref, computed, watch } from 'vue';
-const timeLeft = ref(5);
+const timeLeft = ref(14);
 const border = ref(25);
 const width = ref(25)
 const dashLen = (100 - border.value / 2) * Math.PI * 2;
 
-const dashOffset = computed(() => (timeLeft.value - 1) / 5 * dashLen)
+const dashOffset = computed(() => (timeLeft.value - 1) / 14 * dashLen)
 
 watch(
     () => props.isViewing,
     (value, oldValue) => {
         if (value == true) {
-            timeLeft.value = 5
+            timeLeft.value = 14
             const interval = setInterval(() => {
                 timeLeft.value -= 1
                 if (timeLeft.value <= 0) {
