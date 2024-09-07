@@ -48,6 +48,6 @@ def test_set_flag(sec):
         task_num = 2
 
 if __name__ == '__main__':
-    t1 = Thread(target=test_set_flag, args=(10, ))
-    t1.start()
-    app.run(port=5000, debug=True)
+    # t1 = Thread(target=test_set_flag, args=(10, ))
+    # t1.start()
+    app.run(port=5111, debug=True)

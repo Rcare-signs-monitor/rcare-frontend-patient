@@ -29,7 +29,7 @@ const signs = ref({
 const getData = async () => {
     while (true) {
         let type;
-        await axios.get("http://localhost:5000/").then(res => {
+        await axios.get("http://localhost:5111/").then(res => {
             console.log(res.data);
             if (res.data['type'] === 0) {
                 type = 0
@@ -59,7 +59,7 @@ getData()
 
 
 const getSign = async () => {
-    await axios.get("http://localhost:5000/api/sign").then(res => {
+    await axios.get("http://localhost:5111/api/sign").then(res => {
         console.log(res.data);
         isViewing.value = true
         console.log("正在查看体征")
@@ -76,12 +76,12 @@ const getSign = async () => {
 }
 
 const getSHelp = async () => {
-    await axios.get("http://localhost:5000/api/help").then(res => {
+    await axios.get("http://localhost:5111/api/help").then(res => {
         console.log(res.data);
         isCalling.value = true
         console.log("正在呼叫")
     }).finally(async function () {
-        await delay(5);
+        await delay(14);
         isCalling.value = false
     })
 }
@@ -101,7 +101,7 @@ const getSHelp = async () => {
                         style="width:80px;height:30px;margin-top: 1px;" /></span></div>
             <div class="box2" style="transform: skew(45deg)"></div>
             <div class="title">
-                <div style="font-size: 25px; margin-bottom: 10px; color: white;" align="center">非接触式<br />生命体征监测系统</div>
+                <div style="font-size: 25px; margin-bottom: 10px; color: white;" align="center"><br />生命体征监测系统</div>
                 <dv-decoration6 style="width: 270px; height: 7px" />
             </div>
             <div class="box2" style="transform: skew(-45deg)"></div>
@@ -124,7 +124,12 @@ const getSHelp = async () => {
         <dv-decoration-12 style="width:80px;height:80px;" />
     </div>
     <div>
-
+        <div style="display: flex; justify-content: center; align-items: center;background-color: #151E3E; height: 40px;">
+            <p style="margin-right: 30px;"><a href="" target="_blank">关于智慧医疗系统</a></p>
+            <p style="margin-right: 30px;"><a href="" target="_blank">About Smart Medical System</a></p>
+            <p style="margin-right: 30px;"><a href="https://beian.miit.gov.cn/" target="_blank">备案号：鲁ICP备2024068184号</a></p>
+            <p><a href="" target="_blank">©2024 IoT Vitalwave</a></p>
+        </div>
     </div>
 </template>
 
